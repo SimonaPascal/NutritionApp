@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectPDMXamarin.Pages.CalculatorIBM">
+    <ContentPage.Content>
+
+            <Grid Padding="40" HorizontalOptions="CenterAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="64"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="64"/>
+
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Ce este BMI?"/>
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Text=" BMI = Body Mass Index sau IMC = indicele de masă corporală – patru denumiri pentru un singur concept. Este vorba despre un instrument care indică raportul dintre înălţimea şi greutatea unei persoane."/>
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Calculeaza BMI!"/>
+                <Entry Grid.Row="3" Grid.Column="0" Placeholder="Greutate" x:Name="entryValoareGreutate"  Text="{Binding ValoareGreutate}"/>
+                <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="Introdu greutatea ta in KG!"/>
+                <Entry Grid.Row="4" Grid.Column="0" Placeholder="Inaltime" x:Name="entryValoareInaltime"  Text="{Binding ValoareInaltime}"/>
+                <Label Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Text="Introdu inaltimea ta in CM!"/>
+                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  Text="Calculeaza Index!" Command="{Binding CalculeazaCommand}"/>
+                <Label Grid.Row="6" Grid.Column="0" IsVisible="{Binding isVisible}" Text="Indexul tau este: "/>
+                <Label Grid.Row="6" Grid.Column="1" x:Name="entryRezultat" Text="{Binding Rezultat}"/>
+                <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="{Binding isVisible}" x:Name="entryRezultatAnaliza" Text="{Binding ValoareAnaliza}"/>
+                <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="1" Text="Introdu ingrediente pentru a recomanda reteta!" />
+                <Entry Grid.Row="8" Grid.Column="1" Placeholder="Ingrediente" x:Name="entryIngrediente"  Text="{Binding ValoareIngrediente}"/>
+                <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"  Text="Vreau retete pentru IBM meu!" Command="{Binding PornesteActivitate}"/>
+
+
+            </Grid>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

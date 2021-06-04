@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectPDMXamarin.Pages.RegistrationPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <Entry x:Name="FirstName"  Text ="{Binding FirstNameReg}" Placeholder="First Name" PlaceholderColor="Black" HeightRequest="40" TextColor="Black"></Entry>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <Entry x:Name="LastName" Text ="{Binding LastNameReg}" Placeholder="Last Name" PlaceholderColor="Black" HeightRequest="40" TextColor="Black"></Entry>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2">
+                <Entry x:Name="EmailAddress"  Text ="{Binding EmailAddressReg}" Keyboard="Email" Placeholder="Email Address" PlaceholderColor="Black" HeightRequest="40" TextColor="Black" ></Entry>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3">
+                <Entry x:Name="PhoneNumber" Text ="{Binding PhoneNumberReg}" Placeholder="Phone Number" PlaceholderColor="Black" HeightRequest="40" TextColor="Black"></Entry>
+            </StackLayout>
+            <StackLayout Grid.Row="4">
+                <Entry x:Name="Password" Text ="{Binding PasswordReg}" IsPassword="true" Placeholder="Password" PlaceholderColor="Black" HeightRequest="40" TextColor="Black"></Entry>
+            </StackLayout>
+
+            <StackLayout Grid.Row="5">
+                <Picker  x:Name="Gender"  HeightRequest="40" SelectedItem ="{Binding GenderReg}" BackgroundColor="White" >
+                    <Picker.Items>
+                        <x:String>Female</x:String>
+                        <x:String>Male</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Grid.Row="6">
+                <Frame BackgroundColor="White">
+                    <StackLayout Orientation="Horizontal">
+                        <Label  Text="Birthday" TextColor="Black" ></Label>
+                        <DatePicker x:Name="Birthday" Date="{Binding BirthdayReg}"  BackgroundColor="White" HorizontalOptions="FillAndExpand"></DatePicker >
+                    </StackLayout>
+                </Frame>
+
+
+            </StackLayout>
+            <StackLayout Grid.Row="7">
+                <Button Text="Register" TextColor="White"  
+                            FontAttributes="Bold" FontSize="Medium" HorizontalOptions="FillAndExpand"  
+                            BackgroundColor="#088da5" HeightRequest="40" BorderColor="#000000" Command ="{Binding RegisterCmd}"/>
+                <Label x:Name ="register" HorizontalTextAlignment="Start" FontSize="Subtitle" Margin="2,0,0,0" HorizontalOptions="Start" VerticalOptions="EndAndExpand" TextColor="White"/>
+
+            </StackLayout>
+
+       
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

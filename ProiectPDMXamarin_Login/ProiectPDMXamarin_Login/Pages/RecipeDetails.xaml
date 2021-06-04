@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectPDMXamarin.Pages.RecipeDetails">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Recipe Details" FontSize="Title" HorizontalTextAlignment="Center"/>
+            <Image x:Name="ItemImage" HeightRequest="300" WidthRequest="300"/>
+            <Label x:Name="ItemTitle" FontSize="Medium" HorizontalTextAlignment="Center"/>
+            <Label x:Name="ItemQuantity" HorizontalTextAlignment="Center"/>
+            <Label Text="grams (total quantity)" HorizontalTextAlignment="Center"/>
+            <Label x:Name="ItemCalories" HorizontalTextAlignment="Center"/>
+            <Label Text="calories" HorizontalTextAlignment="Center"/>
+            <Label Text="Total time" HorizontalTextAlignment="Center"/>
+            <Label x:Name="ItemTime" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

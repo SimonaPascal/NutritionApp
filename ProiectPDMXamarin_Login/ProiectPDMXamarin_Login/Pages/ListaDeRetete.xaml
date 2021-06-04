@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectPDMXamarin.Pages.ListaDeRetete">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Retete recomandate: " FontSize="Title"/>
+            <ListView x:Name="listViewRetete">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding image}"/>
+                                <Label Text="{Binding label}"/>
+                                <Label Text="{Binding ingredientLines[0]} {Binding ingredientLines[1]}"/>
+                                <Label Text="{Binding ingredientLines[2]}"/>
+                                <Label Text="{Binding ingredientLines[3]}"/>
+                                <Label Text="{Binding totalTime}"/>
+                                <Label Text="{Binding url}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

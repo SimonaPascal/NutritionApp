@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectPDMXamarin.Pages.ListaMese">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Selectati data:"/>
+            <DatePicker Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                DateSelected="OnDateChanged"
+                MinimumDate="{Binding DataMinima}"
+                MaximumDate="{Binding DataMaxima}"
+                Date="{Binding DataSelectata}" />
+
+            <ListView x:Name="listViewMese" IsGroupingEnabled="true" GroupDisplayBinding="{Binding TipMasa}">
+
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Titlu}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20,0,0,0" Orientation="Horizontal">
+                                <Label Text="{Binding TipMasa}"/>
+                                <Label Text="{Binding Nume}"/>
+                                <Label Text="{Binding Calorii,StringFormat='= {0} calorii'}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

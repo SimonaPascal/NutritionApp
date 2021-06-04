@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectPDMXamarin.Pages.AdaugaMasa"
+             Title="Adauga Masa">
+    <ContentPage.Content>
+        
+        <Grid Padding="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Calorii!"/>
+            <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="0" x:Name="entryValoare" Text="{Binding NumarCalorii}"/>
+
+            <Picker Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="pickerSursa" Title="Selectati tipul mesei" ItemsSource ="{Binding ListaTipMese}"  SelectedIndex="{Binding TipMasa}"/>
+
+            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Ce ati mancat?"/>
+            <Entry Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Nume Mancare" x:Name="entryRezultat" Text="{Binding NumeMancare}"/>
+
+            <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Cand ati mancat?"/>
+            <DatePicker Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                MinimumDate="{Binding DataMinima}"
+                MaximumDate="{Binding DataMaxima}"
+                Date="{Binding DataSelectata}" />
+
+            <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Text="Adauga" Command="{Binding AdaugaCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

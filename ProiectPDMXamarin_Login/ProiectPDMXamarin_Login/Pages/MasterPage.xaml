@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectPDMXamarin.Pages.MasterPage"
+             xmlns:pages="clr-namespace:ProiectPDMXamarin.Pages">
+  <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#fff">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical" BackgroundColor="#BF043055">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal" Margin="5,50,5,5" HorizontalOptions="FillAndExpand">
+
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="Nutrition App" HorizontalTextAlignment="Start" FontSize="Large" Margin="2,0,0,0" HorizontalOptions="Start" VerticalOptions="EndAndExpand" TextColor="#03223b" FontAttributes="Bold"/>
+                                <Label x:Name ="UserName" Text = "{Binding UserName}"  x:FieldModifier="public" HorizontalTextAlignment="Start" FontSize="Title" Margin="2,0,0,0" HorizontalOptions="Start" VerticalOptions="EndAndExpand" TextColor="#03223b" FontAttributes="Bold"/>
+                                <Label x:Name ="UserDetails"  Text = "{Binding UserDetails}" x:FieldModifier="public" HorizontalTextAlignment="Start" FontSize="Subtitle" Margin="2,0,0,0" HorizontalOptions="Start" VerticalOptions="EndAndExpand" TextColor="#03223b"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout BackgroundColor="#03223b" MinimumHeightRequest="3" Orientation="Vertical" HeightRequest="3" HorizontalOptions="FillAndExpand">
+
+                        </StackLayout>
+                    </StackLayout>
+
+                    <ListView x:Name="navigationList" Margin="0" SeparatorVisibility="Default" VerticalOptions="Start" ItemTapped="Item_Tapped" >
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="60">
+
+                                        <Image Source= "{Binding IconName}" HorizontalOptions="Start" VerticalOptions="Center" Margin="15,0,5,2" HeightRequest="25" WidthRequest="25"/>
+                                        <Label Text="{Binding OptionName}" FontAttributes="Bold" FontSize="Default" Margin="10,0,5,2" HorizontalOptions="Start" VerticalOptions="Center" TextColor="#03223b"/>
+                                    </StackLayout>
+
+                                </ViewCell>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+        <ContentPage>
+            <Label Text="Welcome to Panda App" FontSize="Large"/>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
